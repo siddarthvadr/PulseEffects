@@ -6,8 +6,6 @@
         "use-custom-color": "true",
         "fill": "true",
         "show-bar-border": "true",
-        "scale": "1",
-        "exponent": "1",
         "sampling-freq": "10",
         "line-width": "1.5",
         "type": "Bars",
@@ -15,6 +13,12 @@
             "0.44700000000000001",
             "0.624",
             "0.81200000000000006",
+            "1"
+        ],
+        "color-axis-labels": [
+            "1",
+            "1",
+            "1",
             "1"
         ],
         "gradient-color": [
@@ -25,7 +29,7 @@
         ]
     },
     "output": {
-        "blacklist": "",
+        "blocklist": "",
         "plugins_order": [
             "gate",
             "compressor",
@@ -46,7 +50,8 @@
             "loudness",
             "maximizer",
             "filter",
-            "pitch"
+            "pitch",
+            "rnnoise"
         ],
         "bass_enhancer": {
             "state": "false",
@@ -67,10 +72,12 @@
             "mode": "Upward",
             "attack": "25",
             "release": "100",
+            "release-threshold": "-200",
             "threshold": "-10",
             "ratio": "4",
             "knee": "-5",
             "makeup": "-10",
+            "boost-threshold": "-72",
             "sidechain": {
                 "listen": "false",
                 "type": "Feed-forward",
@@ -79,7 +86,11 @@
                 "preamp": "0",
                 "reactivity": "10",
                 "lookahead": "0"
-            }
+            },
+            "hpf-mode": "off",
+            "hpf-frequency": "10",
+            "lpf-mode": "off",
+            "lpf-frequency": "20000"
         },
         "crossfeed": {
             "state": "false",
@@ -102,7 +113,7 @@
             "sc-listen": "false"
         },
         "equalizer": {
-            "state": "false",
+            "state": "true",
             "mode": "IIR",
             "num-bands": "10",
             "input-gain": "-1",
@@ -344,6 +355,7 @@
             "threshold": "-60",
             "ratio": "1.5",
             "knee": "18",
+            "input": "0",
             "makeup": "0"
         },
         "limiter": {
@@ -352,9 +364,11 @@
             "limit": "0",
             "lookahead": "5",
             "release": "10",
+            "auto-level": "false",
             "asc": "false",
             "asc-level": "0.5",
-            "oversampling": "4"
+            "oversampling": "4",
+            "output-gain": "0"
         },
         "maximizer": {
             "state": "false",
@@ -442,9 +456,10 @@
         },
         "loudness": {
             "state": "false",
-            "loudness": "-2.1700000000000199",
-            "output": "-5.6400000000000077",
-            "link": "-9.0999999999999996"
+            "fft": "4096",
+            "std": "ISO226-2003",
+            "input": "0",
+            "volume": "0"
         },
         "multiband_gate": {
             "state": "false",
@@ -619,6 +634,12 @@
             "output-gain": "0",
             "time-l": "0",
             "time-r": "0"
+        },
+        "rnnoise": {
+            "state": "false",
+            "input-gain": "0",
+            "output-gain": "0",
+            "model-path": ""
         }
     }
 }
