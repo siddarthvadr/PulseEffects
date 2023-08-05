@@ -1,6 +1,0 @@
-It's how file systems work. Most file systems don't allow these characters: \ / : * ? " < > |
-
-So, I used URL encoding instead (/ or "slash" is %2F)
-
-Finally, //.sound became %2F%2F.sound
-I can't do anything to fix this :(
