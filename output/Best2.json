@@ -403,7 +403,7 @@
         },
         "multiband_compressor": {
             "state": "true",
-            "input-gain": "-7",
+            "input-gain": "-2",
             "output-gain": "0",
             "freq0": "250",
             "freq1": "700",
